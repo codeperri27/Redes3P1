@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+            body {
+                font-family : Ubuntu;
+                background-color: #f2f6fc;
+                text-align: center;
+            }
+            .title {
+                color: #00CA93;
+                font-size: 2.3rem;
+            }
+            .subTitle {
+                color: #00CA93;
+                font-size: 1.8rem;
+            }
+            .container {
+                border-radius: 25px;
+                background-color: #FFF;
+                max-width: 600px;
+                padding: 20px;
+                margin: auto;
+            }
+            .container > div {
+                color: #58555e;
+                text-align: left;
+            }
+            .container > div > span {
+                color: #00CA93;
+                text-align: left;
+            }
+            .container_img {
+                margin: 5px auto;
+            }
+            .container_img > img {
+                margin: 10px 5px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="title">
+            <img width="30px" height="30px" src={{ agentOSLogo }} />
+            Reporte de Monitoreo de {{ agentSysName }}
+        </h1>
+        <div class="container">
+            <div>
+                <span>Descripción del sistema:</span> {{ agentSysDescr }}
+            </div>
+            <div>
+                <span>Tiempo activo en ms:</span> {{ agentSysUpTime }}
+            </div>
+            <div>
+                <span>Contacto:</span> {{ agentSysContact }}
+            </div>
+            <div>
+                <span>Ubicación:</span> {{ agentSysLocation }}
+            </div>
+        </div>
+        <h2 class="subTitle">Información del dispositivo:</h2>
+        <div class="container_img">
+            <img width="100%" src={{ ifGraphFile }} />
+            <img width="100%" src={{ ipGraphFile }} />
+            <img width="100%" src={{ icmpGraphFile }} />
+            <img width="100%" src={{ tcpGraphFile }} />
+            <img width="100%" src={{ udpGraphFile }} />
+        </div>
+    </body>
+</html>
